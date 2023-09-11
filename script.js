@@ -48,7 +48,7 @@ function updateTime() {
     milis = elapsedTime;
     secs = Math.floor((elapsedTime / 1000) % 60);
     mins = Math.floor((elapsedTime / (1000 * 60)) % 60);
-    hrs = Math.floor((elapsedTime / (1000 * 60 * 60)) % 60);
+    hrs = Math.floor((elapsedTime / (1000 * 60 * 60)) % 100);
 
     milis = padMili(milis % 1000);
     secs = pad(secs);
