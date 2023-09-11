@@ -32,7 +32,8 @@ stopBtn.addEventListener("click", () => {
     }
 });
 resetBtn.addEventListener("click", () => {
-    paused = true
+    paused = true;
+    clearInterval(intervalId);
     startTime = 0;
     elapsedTime = 0;
     hrs = 0;
