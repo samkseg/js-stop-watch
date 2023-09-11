@@ -67,9 +67,19 @@ function updateTime() {
 
 function loadTime() {
     let currentDate = new Date();
-    let dateTime = currentDate.getDate() + "/" + (currentDate.getMonth() + 1) + "/" + currentDate.getFullYear() + "<br>" + currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds();
+
+    let secs = pad(currentDate.getSeconds());
+    let mins = pad(currentDate.getMinutes());
+    let hrs = pad(currentDate.getHours());
+
+    let dateTime = currentDate.getDate() + "/" + (currentDate.getMonth() + 1) + "/" + currentDate.getFullYear() + "<br>" + hrs + ":" + mins + ":" + secs;
+
     theTime.innerHTML = dateTime;
     document.getElementById("theTime").appendChild(theTime);
+
+    function pad(unit) {
+        return (("0") + unit).length > 2 ? unit : "0" + unit;
+    }
 }
 loadTime();
 setInterval(loadTime, 1000);
