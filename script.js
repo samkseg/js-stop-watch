@@ -43,7 +43,7 @@ resetBtn.addEventListener("click", () => {
     timerDisplay.textContent = "00:00:00:000"
 });
 
-function updateTime() {
+const updateTime = () => {
     elapsedTime = Date.now() - startTime;
     milis = elapsedTime;
     secs = Math.floor((elapsedTime / 1000) % 60);
@@ -66,7 +66,7 @@ function updateTime() {
     }
 }
 
-function loadTime() {
+const loadTime = () => {
     let currentDate = new Date();
 
     let secs = pad(currentDate.getSeconds());
